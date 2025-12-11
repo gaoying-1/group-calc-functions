@@ -1,7 +1,5 @@
 #include<stdio.h>
-int main()
+int div(int a,int b)
 {
-int a,b;
-scanf("%d %d",&a,&b);
-printf("%d",a*1.0/b);
+  return a/b;
 }
