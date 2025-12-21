@@ -1,0 +1,7 @@
+#编译产物
+*.o
+student_manage
+#数据文件
+*.data
+#vim临时文件
+*.swp
