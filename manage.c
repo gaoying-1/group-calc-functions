@@ -1,4 +1,4 @@
-#include"../manage.h"
+#include"manage.h"
 #include<stdio.h>
 #include<string.h>
 
@@ -33,7 +33,16 @@ return 0;
 //查：
 int queryStudent(Student arr[],int count,char *id)
 {
-printf("查询函数待完成\n");
+for(int i=0;i<count;i++)
+{
+	if(strcmp(arr[i].id, id)==0)
+	{
+		printf("Student found:\n");
+		printf("ID:%s\n Name:%s\n Age:%d\n Score:%.2f\n",arr[i].id, arr[i].name, arr[i].age, arr[i].score);
+		return i;
+	}
+}
+printf("Student with ID %s not found!\n", id);
 return -1;
 }
 
