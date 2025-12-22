@@ -21,5 +21,5 @@ int deleteStudent(Student arr[],int *count,char *id);
 int queryStudent(Student arr[],int count,char *id);
 //按学号修改
 int modifyStudent(Student arr[],int count,char *id);
-
+void clearInputBuffer();
 #endif

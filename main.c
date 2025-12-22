@@ -1,3 +1,4 @@
+#include<stdio.h>
 #include"manage.h"
 
 #define MAX_STUDENTS 50
