@@ -1,12 +1,12 @@
 CC=gcc
 CFLAGS=-Wall -g
 TARGET=student_manage
-SRCS=main.c src/*.c
-OBJS=$(SRCS:.c=.o)
-
+OBJS=main.o manage.o
 $(TARGET):$(OBJS)
 	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
+%.o:%.c
+	$(CC) $(CFLAGS) -c -o $@ $<
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f  $(TARGET) $(OBJS)
 
 
