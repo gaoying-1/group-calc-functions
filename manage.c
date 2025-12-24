@@ -18,9 +18,25 @@ printf("========================\n");
 printf("请选择操作: ");
 }
 //增：
-void addStudent(Student arr[],int *count)
+void addStudent(Student arr[], int *count)
 {
-printf("添加函数待完成\n");
+    int newIndex = *count;
+    clearInputBuffer();
+    printf("\n输入新学生的信息：\n");
+    printf("学号：");
+    fgets(arr[newIndex].id, sizeof(arr[newIndex].id), stdin);
+    arr[newIndex].id[strcspn(arr[newIndex].id, "\n")] = '\0';
+    printf("姓名：");
+    fgets(arr[newIndex].name, sizeof(arr[newIndex].name), stdin);
+    arr[newIndex].name[strcspn(arr[newIndex].name, "\n")] = '\0';
+    printf("年龄：");
+    scanf("%d", &arr[newIndex].age);
+    clearInputBuffer();
+    printf("成绩：");
+    scanf("%f", &arr[newIndex].score);
+    clearInputBuffer();
+    (*count)++;
+    printf("\n学生信息添加成功！\n");
 }
 
 //删：
