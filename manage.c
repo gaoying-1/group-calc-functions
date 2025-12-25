@@ -56,6 +56,7 @@ for(i=pos;i<*count-1;i++)
 (*count)--;
 printf("学号为%s的学生已成功删除！\n",id);
 return 0;
+}
 //查：
 int queryStudent(Student arr[],int count,char *id)
 {
