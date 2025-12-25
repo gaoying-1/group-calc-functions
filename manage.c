@@ -38,14 +38,41 @@ void addStudent(Student arr[], int *count)
     (*count)++;
     printf("\n学生信息添加成功！\n");
 }
-
 //删：
 int deleteStudent(Student arr[],int *count,char *id)
+{ //新增：空指针检查
+  if(arr==NULL||count==NULL||id==NULL)
+  {
+    printf("错误：传入空指针，删除操作终止。\n");
+    return -2;//用-2区分空指针错误
+  }
+  int i,pos=-1;
+  //检查学生数组是否为空
+    if(*count==0){
+        printf("学生列表为空，无法删除！\n");
+        return -1;//返回-1表示删除失败
+}
+//2.遍历数组查找目标学号的学生
+for(i=0;i<*count;i++){
+if(strcmp(arr[i].id,id)==0){
+pos=i;//记录目标学生的下标
+      break;
+}
+}
+//3.未找到对应学号的学生
+if(pos==-1){
+printf("未找到学号为%s的学生，删除失败！\n",id);
+return -1;
+}
+//4.找到学生，执行删除（后续元素向前覆盖）
+for(i=pos;i<*count-1;i++)
 {
-printf("删除函数待完成\n");
+        arr[i]=arr[i+1];
+}
+(*count)--;
+printf("学号为%s的学生已成功删除！\n",id);
 return 0;
 }
-
 //查：
 int queryStudent(Student arr[],int count,char *id)
 {
