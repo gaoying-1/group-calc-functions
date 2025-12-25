@@ -22,12 +22,34 @@ void addStudent(Student arr[],int *count)
 {
 printf("添加函数待完成\n");
 }
-
 //删：
 int deleteStudent(Student arr[],int *count,char *id)
+{ //1.检查学生数组是否为空
+    if(*cout==0){
+        printf("学生列表为空，无法删除！\n");
+        return -1;//返回-1表示删除失败
+}
+int i,pos=-1;
+//2.遍历数组查找目标学号的学生
+for(i=o;i<*count;i++){
+if(strcmp(arr[i].id,id)==0){
+pos=i;//记录目标学生的下标
+      break;
+}
+}
+//3.未找到对应学号的学生
+if(pos==-1){
+printf("未找到学号为%s的学生，删除失败！\n",id);
+return -1;
+}
+//4.找到学生，执行删除（后续元素向前覆盖）
+for(i=pos;i<*count-1;i++)
 {
-printf("删除函数待完成\n");
-return 0;
+        arr[i]=arr[i+1];
+}
+(*count)--;
+printf("学号为%s的学生已成功删除！\n",id);
+return 0;//返回0表示删除成功
 }
 
 //查：
